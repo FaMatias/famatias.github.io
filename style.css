@@ -1,7 +1,7 @@
 :root {
-    --neon: #00ff41;       /* Verde Hacker */
-    --neon-dim: #008F11;   /* Verde Oscuro */
-    --bg-color: #050505;   /* Negro casi total */
+    --neon: #00ff00;       /* Verde más brillante para mejor contraste */
+    --neon-dim: #00cc00;   /* Ajustado */
+    --bg-color: #1a1a1a;   /* Gris oscuro para legibilidad */
 }
 
 body {
@@ -14,6 +14,7 @@ body {
     align-items: center;
     min-height: 100vh;
     overflow: hidden;
+    line-height: 1.5;      /* Más espacio entre líneas */
 }
 
 /* --- EFECTO CRT (Monitor Viejo) --- */
@@ -33,12 +34,13 @@ body {
     background-size: 100% 4px;
     z-index: 10;
     pointer-events: none;
+    opacity: 0.05;         /* Menos intenso para no distraer */
 }
 
 .terminal-container {
     border: 1px solid var(--neon);
     padding: 2rem;
-    max-width: 450px;
+    max-width: 600px;      /* Más ancho para desktops */
     width: 90%;
     box-shadow: 0 0 30px rgba(0, 255, 65, 0.1);
     background: rgba(0, 10, 0, 0.95);
@@ -64,7 +66,7 @@ body {
 
 @keyframes glitch-anim {
     0% { text-shadow: 2px 0 var(--neon-dim); }
-    2% { text-shadow: -2px 0 #ff00c1; } /* Un toque de error rosa */
+    2% { text-shadow: -2px 0 var(--neon-dim); }  /* Suavizado, sin rosa */
     4% { text-shadow: 2px 0 var(--neon-dim); }
     100% { text-shadow: 2px 0 var(--neon-dim); }
 }
@@ -74,12 +76,11 @@ body {
     color: #fff;
     margin-bottom: 1.5rem;
     min-height: 20px;
-    border-right: 2px solid var(--neon); /* Cursor parpadeante */
     display: inline-block;
-    animation: blink-cursor 0.75s step-end infinite;
+    /* Quité el cursor parpadeante para estática, pero puedes agregar: border-right: 2px solid var(--neon); animation: blink-cursor 0.75s step-end infinite; */
 }
 
-@keyframes blink-cursor { 50% { border-color: transparent; } }
+/* @keyframes blink-cursor { 50% { border-color: transparent; } } */ /* Comentado si lo quieres de vuelta */
 
 /* --- ANIMACIÓN ADN (Corrección) --- */
 .dna-visual {
@@ -94,13 +95,19 @@ body {
         transparent 20px
     );
     opacity: 0.6;
-    /* Aquí está la magia: Movemos el fondo */
     animation: move-dna 2s linear infinite; 
 }
 
 @keyframes move-dna {
     0% { background-position: 0 0; }
     100% { background-position: 40px 0; }
+}
+
+/* --- SECCIÓN ABOUT --- */
+.about {
+    margin: 1.5rem 0;
+    padding: 1rem;
+    border-left: 3px solid var(--neon-dim);
 }
 
 /* --- BOTONES --- */
