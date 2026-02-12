@@ -1,7 +1,8 @@
- :root {
-    --neon: #00ff9d;       /* Verde cian más pro */
+:root {
+    --neon: #00ff9d;       /* Verde cian pro */
     --neon-dim: #00b36b;
-    --bg: #0d1117;         /* Fondo GitHub-like, oscuro pero legible */
+    --bg: #0d1117;         /* Fondo oscuro legible */
+    --text: #c9d1d9;       /* Texto claro */
 }
 
 body {
@@ -15,41 +16,39 @@ body {
     align-items: center;
     padding: 1rem;
     box-sizing: border-box;
+    font-size: 16px; /* Base para rem */
 }
 
 .terminal-container {
     border: 1px solid var(--neon-dim);
-    padding: 2rem;
-    max-width: 500px;
-    width: 100%;
+    padding: 2rem 1.5rem;
+    max-width: 90%;
+    width: 400px; /* Ancho fijo pero responsive */
     background: rgba(13, 17, 23, 0.9);
-    box-shadow: 0 0 20px rgba(0, 255, 157, 0.1);
-}
-
-.system-status {
-    font-size: 0.8rem;
-    color: var(--neon-dim);
-    margin-bottom: 0.5rem;
+    box-shadow: 0 0 15px rgba(0, 255, 157, 0.05);
+    border-radius: 4px; /* Suave para mobile */
 }
 
 .glitch {
-    font-size: 2.2rem;
+    font-size: 2rem;
     margin: 0.5rem 0;
-    letter-spacing: 2px;
-    animation: glitch 4s infinite;
+    letter-spacing: 1px;
+    text-shadow: 0.05em 0 0 var(--neon-dim);
+    animation: glitch 5s infinite ease-in-out;
 }
 
 @keyframes glitch {
-    0%, 100% { text-shadow: 0.05em 0 0 #00ff9d, -0.05em 0 0 #ff00aa; }
-    14% { text-shadow: 0.05em 0 0 #00ff9d, -0.05em 0 0 #ff00aa; }
-    15% { text-shadow: -0.05em -0.025em 0 #00ff9d, 0.025em 0.025em 0 #ff00aa; }
-    /* Muy sutil, casi imperceptible */
+    0%, 100% { text-shadow: 0.05em 0 0 var(--neon-dim); }
+    50% { text-shadow: -0.05em 0 0 var(--neon-dim); }
+    /* Súper sutil, casi nada */
 }
 
 .bio-tag {
     font-size: 1rem;
-    color: #c9d1d9;
+    color: var(--text);
     margin: 1rem 0 2rem;
+    text-align: center;
+    word-break: break-word; /* Evita overflow en bio */
 }
 
 .access-links {
@@ -61,24 +60,28 @@ body {
 .nav-btn {
     display: flex;
     align-items: center;
+    justify-content: flex-start;
     color: var(--neon);
     text-decoration: none;
-    padding: 1rem;
+    padding: 1.2rem 1rem; /* Más padding para touch */
     border: 1px solid var(--neon-dim);
     transition: all 0.3s;
-    font-size: 1.1rem; /* Más grande para mobile */
+    font-size: 1.1rem;
+    word-break: break-all; /* Textos no se salen */
+    overflow: hidden; /* Corta si es extremo */
+    border-radius: 4px;
 }
 
 .nav-btn:hover {
     background: var(--neon-dim);
-    color: #0d1117;
-    transform: translateX(8px);
+    color: var(--bg);
+    transform: translateX(5px);
 }
 
 .prefix {
     margin-right: 1rem;
-    opacity: 0.7;
-    font-size: 0.9rem;
+    opacity: 0.8;
+    font-size: 1rem;
 }
 
 footer {
@@ -86,10 +89,30 @@ footer {
     text-align: center;
     font-size: 0.9rem;
     color: var(--neon-dim);
-    border-top: 1px solid var(--neon-dim);
-    padding-top: 1rem;
 }
 
-.loc-tag, .console-log {
-    margin: 0.3rem 0;
+/* Media queries para responsive */
+@media (max-width: 480px) {
+    .terminal-container {
+        padding: 1.5rem 1rem;
+        width: 100%;
+        max-width: none;
+    }
+
+    .glitch {
+        font-size: 1.8rem;
+    }
+
+    .bio-tag {
+        font-size: 0.95rem;
+    }
+
+    .nav-btn {
+        font-size: 1rem;
+        padding: 1rem 0.8rem;
+    }
+
+    .prefix {
+        font-size: 0.9rem;
+    }
 }
