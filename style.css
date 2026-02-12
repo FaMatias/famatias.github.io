@@ -1,11 +1,11 @@
 :root {
-    --neon: #00ff41; /* Verde Matrix clásico */
-    --dark: #0a0a0a;
-    --dim: #003b00;
+    --neon: #00ff41;       /* Verde Hacker */
+    --neon-dim: #008F11;   /* Verde Oscuro */
+    --bg-color: #050505;   /* Negro casi total */
 }
 
 body {
-    background-color: var(--dark);
+    background-color: var(--bg-color);
     color: var(--neon);
     font-family: 'Courier New', Courier, monospace;
     margin: 0;
@@ -16,83 +16,126 @@ body {
     overflow: hidden;
 }
 
-/* Efecto de pantalla vieja */
+/* --- EFECTO CRT (Monitor Viejo) --- */
 .scanline {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, transparent 50%, rgba(0, 255, 65, 0.02) 51%);
+    background: linear-gradient(
+        to bottom,
+        rgba(255,255,255,0),
+        rgba(255,255,255,0) 50%,
+        rgba(0,0,0,0.2) 50%,
+        rgba(0,0,0,0.2)
+    );
     background-size: 100% 4px;
-    pointer-events: none;
     z-index: 10;
+    pointer-events: none;
 }
 
 .terminal-container {
     border: 1px solid var(--neon);
     padding: 2rem;
-    max-width: 500px;
+    max-width: 450px;
     width: 90%;
-    box-shadow: 0 0 20px rgba(0, 255, 65, 0.15);
-    background: rgba(0, 10, 0, 0.9);
+    box-shadow: 0 0 30px rgba(0, 255, 65, 0.1);
+    background: rgba(0, 10, 0, 0.95);
     position: relative;
+    z-index: 5;
 }
 
-.system-status { font-size: 0.7rem; margin-bottom: 2rem; opacity: 0.8; }
+/* --- TEXTOS --- */
+.system-status { 
+    font-size: 0.7rem; 
+    color: var(--neon-dim); 
+    margin-bottom: 1rem; 
+    letter-spacing: 1px;
+}
 
 .glitch {
-    font-size: 2.5rem;
+    font-size: 2rem;
     margin: 0;
-    letter-spacing: -2px;
-    text-shadow: 2px 2px var(--dim);
+    font-weight: bold;
+    text-shadow: 2px 0 var(--neon-dim);
+    animation: glitch-anim 3s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim {
+    0% { text-shadow: 2px 0 var(--neon-dim); }
+    2% { text-shadow: -2px 0 #ff00c1; } /* Un toque de error rosa */
+    4% { text-shadow: 2px 0 var(--neon-dim); }
+    100% { text-shadow: 2px 0 var(--neon-dim); }
 }
 
 .bio-tag {
-    font-size: 0.9rem;
-    color: #fff; /* Blanco para contraste */
-    min-height: 1.2em;
-    margin-bottom: 2rem;
+    font-size: 0.85rem;
+    color: #fff;
+    margin-bottom: 1.5rem;
+    min-height: 20px;
+    border-right: 2px solid var(--neon); /* Cursor parpadeante */
+    display: inline-block;
+    animation: blink-cursor 0.75s step-end infinite;
 }
 
-/* Enlaces estilo consola */
+@keyframes blink-cursor { 50% { border-color: transparent; } }
+
+/* --- ANIMACIÓN ADN (Corrección) --- */
+.dna-visual {
+    height: 20px;
+    width: 100%;
+    margin: 2rem 0;
+    background: repeating-linear-gradient(
+        90deg,
+        var(--neon) 0px,
+        var(--neon) 2px,
+        transparent 2px,
+        transparent 20px
+    );
+    opacity: 0.6;
+    /* Aquí está la magia: Movemos el fondo */
+    animation: move-dna 2s linear infinite; 
+}
+
+@keyframes move-dna {
+    0% { background-position: 0 0; }
+    100% { background-position: 40px 0; }
+}
+
+/* --- BOTONES --- */
 .nav-btn {
-    display: block;
+    display: flex;
+    align-items: center;
     text-decoration: none;
     color: var(--neon);
-    padding: 12px;
-    margin: 8px 0;
-    border: 1px solid var(--dim);
-    transition: all 0.3s ease;
-    background: rgba(0, 20, 0, 0.5);
+    padding: 15px;
+    margin: 10px 0;
+    border: 1px solid var(--neon-dim);
+    background: rgba(0, 20, 0, 0.6);
+    transition: all 0.2s ease;
 }
 
 .nav-btn:hover {
     background: var(--neon);
-    color: var(--dark);
-    border-color: var(--neon);
-    padding-left: 20px; /* Desplazamiento al pasar el mouse */
+    color: var(--bg-color);
+    box-shadow: 0 0 15px var(--neon);
+    transform: translateX(5px);
 }
 
-.prefix { opacity: 0.5; margin-right: 10px; font-size: 0.8rem; }
-
-/* Decoración ADN simple */
-.dna-visual {
-    height: 4px;
-    background: repeating-linear-gradient(90deg, var(--neon) 0, var(--neon) 2px, transparent 2px, transparent 10px);
-    margin: 2rem 0;
-    opacity: 0.3;
+.prefix { 
+    margin-right: 15px; 
+    font-size: 0.7rem; 
+    opacity: 0.7; 
 }
 
+/* --- PIE DE PÁGINA --- */
 footer {
-    margin-top: 3rem;
-    font-size: 0.7rem;
-    border-top: 1px solid var(--dim);
-    padding-top: 1rem;
+    margin-top: 2rem;
+    font-size: 0.65rem;
+    color: var(--neon-dim);
+    border-top: 1px dashed var(--neon-dim);
+    padding-top: 10px;
     display: flex;
     justify-content: space-between;
-    opacity: 0.7;
 }
-
-.console-log { animation: blink 1s infinite; }
-@keyframes blink { 50% { opacity: 0; } }
