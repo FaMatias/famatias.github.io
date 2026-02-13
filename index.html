@@ -3,58 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fabricio Toso | Perfil Profesional</title>
+    <title>Fabricio Toso | Full Stack & Biotech</title>
     
-    <meta name="description" content="Especialista en Infraestructuras Hidráulicas (10 años exp) y Desarrollador Web.">
-    <meta property="og:title" content="Fabricio Toso | Infraestructura & Tecnología">
-    <meta property="og:description" content="Conectando la experiencia técnica en redes de agua con soluciones digitales modernas.">
-    <meta property="og:image" content="https://famatias.github.io/tu-foto-perfil.jpg"> 
-
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧊</text></svg>">
+    <meta name="description" content="Fabricio Toso: Desarrollador Web Full Stack (Java, Angular, Spring) y Técnico Superior en Biotecnología. 8+ años de experiencia en Aguas Cordobesas.">
+    
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧬</text></svg>">
     
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     
     <div class="background-glow"></div>
 
-    <main class="card">
-        <div class="profile-header">
-            <div class="photo-container">
-                <img src="https://github.com/FaMatias.png" alt="Fabricio Toso" class="profile-pic">
+    <main class="card" id="tilt-card">
+        <div class="card-content">
+            <div class="profile-header">
+                <div class="photo-container">
+                    <img src="https://github.com/FaMatias.png" alt="Fabricio Toso" class="profile-pic">
+                </div>
+                
+                <h1>Fabricio Matías Toso</h1>
+                <p class="subtitle">Full Stack Developer | T.S. Biotecnología</p>
+                
+                <div class="badges">
+                    <span class="badge tech">💻 Java • Angular • Spring</span>
+                    <span class="badge water">💧 8+ Años Aguas Cordobesas</span>
+                    <span class="badge study">🎓 T.S. Desarrollo Web</span>
+                    <span class="badge location">📍 Zaragoza, ES</span>
+                </div>
             </div>
-            
-            <h1>Fabricio Matías Toso</h1>
-            <p class="subtitle">Infraestructuras & Desarrollo Digital</p>
-            
-            <div class="badges">
-                <span class="badge water">💧 10 Años Exp. Redes Agua</span>
-                <span class="badge tech">💻 Fullstack Developer</span>
-                <span class="badge location">📍 Zaragoza, ES</span>
+
+            <div class="bio-text">
+                <p>
+                    Perfil híbrido que integra <strong>Desarrollo de Software</strong> y <strong>Operaciones Industriales</strong>. 
+                    Cuento con una sólida trayectoria de 8 años gestionando procesos críticos en <strong>Aguas Cordobesas</strong> y experiencia actual en transformación retail en <strong>Eroski</strong>.
+                </p>
+                <p style="margin-top: 10px;">
+                    Especializado en crear soluciones digitales sostenibles (Java, SQL, PHP). 
+                    Actualmente cursando <em>Sistemas de Telecomunicaciones</em> y finalizando acreditación <strong>PEAC Aragón</strong>.
+                </p>
             </div>
+
+            <nav class="links">
+                <a href="https://www.linkedin.com/in/fabricio-matias-toso" target="_blank" class="btn primary">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.784 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    LinkedIn Profesional
+                </a>
+                
+                <a href="https://github.com/FaMatias" target="_blank" class="btn secondary">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    Portfolio & Código
+                </a>
+
+                <a href="mailto:fabricio.toso@gmail.com" class="btn outline">
+                    ✉️ Contactar (fabricio.toso@gmail.com)
+                </a>
+            </nav>
         </div>
-
-        <p class="bio-text">
-            Transformando 10 años de experiencia operativa en <strong>Aguas Cordobesas</strong> con nuevas tecnologías digitales. 
-            En proceso de acreditación <strong>PEAC Aragón</strong>.
-        </p>
-
-        <nav class="links">
-            <a href="https://www.linkedin.com/in/fabricio-matias-toso" target="_blank" class="btn primary">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.784 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                LinkedIn Profesional
-            </a>
-            
-            <a href="https://github.com/FaMatias" target="_blank" class="btn secondary">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                Portfolio GitHub
-            </a>
-
-            <a href="mailto:Fabricio.toso@gmail.com" class="btn outline">
-                ✉️ Contactar por Email
-            </a>
-        </nav>
     </main>
+
+    <script>
+        const card = document.getElementById('tilt-card');
+
+        document.addEventListener('mousemove', (e) => {
+            const xAxis = (window.innerWidth / 2 - e.pageX) / 25; // Divide por 25 para que sea sutil
+            const yAxis = (window.innerHeight / 2 - e.pageY) / 25;
+            
+            // Aplica la rotación solo si la pantalla es grande (PC)
+            if (window.innerWidth > 768) {
+                card.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+            }
+        });
+
+        // Resetear posición al salir el mouse (opcional, para estabilidad)
+        /* document.addEventListener('mouseleave', () => {
+             card.style.transform = `rotateY(0deg) rotateX(0deg)`;
+        }); */
+    </script>
 </body>
 </html>
